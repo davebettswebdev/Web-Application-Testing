@@ -2,8 +2,19 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('Dashboard buttons are rendered', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  getByText('Strike');
+  getByText('Ball');
+  getByText('Foul');
+  getByText('Hit');
 });
+
+test('Display renders', () => {
+  const { getByText } = render(<App />);
+
+  getByText('Strikes: 0');
+  getByText('Balls: 0');
+});
+
